@@ -1,0 +1,446 @@
+.controls_body {background-color: #fff9d2;}
+body {
+    color: #0020ad;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    animation: dissolve 2s ease-in-out; /* Apply slide-up animation */
+
+
+}
+
+.home_page_body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: url(SVG/bg.svg);
+    transform: translateX(-10rem);
+}
+h1 {
+    transform: rotate(270deg) translateX(0rem) translateY(30%);
+    font-family: 'Gloria Hallelujah', sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    font-size: 8rem;
+    position: relative;
+    animation: slideUp 5s ease-in-out; /* Add animation */
+  }
+  
+  @keyframes slideUp {
+    from {
+      transform: translateX(30%) translateY(-100%) rotate(270deg);
+      opacity: 0;
+    }
+    to {
+      transform:  translateX(30%) rotate(270deg) translateY(0%);
+      opacity: 1;
+    }
+  }
+
+aside {
+    margin: 0;
+    width: 10%;
+}
+
+@keyframes dissolve {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity:1;
+  }
+}
+  .handheld_camera {
+    position: absolute;
+    z-index: 2;
+    transform: translateX(10.5rem) translateY(-4rem) scale(120%);
+
+
+  }
+
+  span {
+    font-family: 'Gloria Hallelujah', sans-serif;
+    font-size: 2rem;
+    position:relative;
+    z-index: 4;
+    color: #0020ad;
+    transform: translateY(-5rem) translateX(14rem);
+
+
+
+  }
+main {    
+
+    margin: 0rem;
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+  
+  #container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+
+  }
+
+  #cameraView {
+    position: relative;
+    /* width: 80vh; /* Fixed width */
+    /* height: 50vh; /* Fixed height */
+    margin-top: 1rem;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: translateX(-12rem) translateY(2rem) scale(76%);
+
+
+
+    
+  }
+  
+  #cameraView video {
+    width: 100%;
+    height: auto;
+    transform: scaleX(-1);
+  }
+  
+#takePhotoBtn {
+    text-decoration: none;
+    border: none;
+}
+  #downloadResetBtn, #Button {
+    color: #0020ad;
+    border: none;
+    padding: 20px 40px;
+    background-color: transparent;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    font-weight: 300;
+    line-height: 1;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+  }
+  
+ .item_card:hover {
+    background-color: #ffeb69;
+    color: #0020ad;
+    text-decoration: none;
+  }
+
+  .item_card .card_image {
+    transition: transform 1s ease-out; /* ease-out effect when leaving */
+    transform: scale(0.6);
+  }
+  
+  .item_card:hover .card_image {
+    transform: scale(1);
+    transition: transform 1s ease-in; /* ease-in effect when hovering */
+  }
+
+  
+  a {
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  
+  #photoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .photoFrame {
+    width: 200px; /* Fixed width */
+    height: 150px; /* Maintain aspect ratio */
+    margin: 10px;
+    border-top: 10px solid white;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-bottom: 30px solid white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    object-fit:fill;
+  }
+
+
+  #countdownOverlay,
+  #flashEffect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    color: white;
+    z-index: 1000;
+    pointer-events: none; /* Ensure overlays do not interfere with camera view */
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  #countdownOverlay {
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0; /* Ensure fully transparent by default */
+    z-index: 1;
+  }
+  
+  #flashEffect {
+    background: rgba(255, 255, 255, 0.9); /* Slight opacity for flash effect */
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+    z-index: 1;
+  }
+  
+  .hidden {
+    display: none;
+    z-index: 0;
+  }
+
+  .visible {
+    display: flex;
+    opacity: 1;
+  }
+  
+
+  #spaced_between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff9d2;
+
+  }
+
+  .item_card {
+    width: 30vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1rem 4rem 1rem;
+  }
+
+  .card_image {
+    width: 100%;
+    height: 50vh;
+    transform: scale(60%);
+    object-fit:contain;
+    
+
+
+  }
+
+  #arrow {  /* this shit needs to come in 2sec later) */
+    position: fixed;
+    transform: scale(20%) translateX(140rem) translateY(-115rem);
+    z-index: 5;
+    
+  }
+
+  h2 {
+    position: fixed;
+    transform: scale(20%) translateX(225rem) translateY(-130rem);
+    z-index: 5;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    font-size: 6rem;
+    line-height: 120%;
+    text-align: center;
+
+  }
+
+  .frame-white {
+    border-top: 10px solid white;
+    border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-bottom: 30px solid white;
+    width: 200px; /* Fixed width */
+    height: 150px; /* Maintain aspect ratio */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .frame-pink {
+    border-top: 10px solid #ff92ef;
+    border-left: 10px solid #ff92ef;
+    border-right: 10px solid #ff92ef;
+    border-bottom: 30px solid #ff92ef;
+
+    width: 200px; /* Fixed width */
+    height: 150px; /* Maintain aspect ratio */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .frame-blue {
+    border-top: 10px solid #87CEEB;
+    border-left: 10px solid #87CEEB;
+    border-right: 10px solid #87CEEB;
+    border-bottom: 30px solid #87CEEB;
+    width: 200px; /* Fixed width */
+    height: 150px; /* Maintain aspect ratio */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .frame-yellow {
+    border-top: 10px solid #F7DC6F;
+    border-left: 10px solid #F7DC6F;
+    border-right: 10px solid #F7DC6F;
+    border-bottom: 30px solid #F7DC6F;
+    width: 200px; /* Fixed width */
+    height: 150px; /* Maintain aspect ratio */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+
+
+  #download_button {
+    position: fixed;
+    z-index: 1000;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateX(30rem) translateY(-17.25rem);
+    font-size: 1.5rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    border: none;
+    opacity: 100%;
+    cursor: pointer;
+  }
+  
+  #download_button span {
+    display: none;
+    font-size: 1rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: #0020ad;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(70%, -50%);
+    white-space: nowrap;
+  }
+  
+  #download_button:hover span {
+    display: block;
+  }
+
+  #next_color {
+    position: fixed;
+    z-index: 1000;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateX(32rem) translateY(-22.60rem);
+    font-size: 1.5rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    border: none;
+    opacity: 100%;
+    cursor: pointer;
+    color: #0020ad;
+  }
+  
+  #next_color span {
+    display: none;
+    font-size: 1rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: #0020ad;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(130%, -30%);
+    white-space: nowrap;
+  }
+  
+  #next_color:hover span {
+    display: block;
+  }
+
+  #before_color {
+    position: fixed;
+    z-index: 1000;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateX(28.2rem) translateY(-22.60rem);
+    font-size: 1.5rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    border: none;
+    opacity: 100%;
+    cursor: pointer;
+    color: #0020ad;
+  }
+  
+  #before_color span {
+    display: none;
+    font-size: 1rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: #0020ad;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(156%, -30%);
+    white-space: nowrap;
+  }
+  
+  #before_color:hover span {
+    display: block;
+  }
+
+
+  #home_button {
+    position: fixed;
+    z-index: 1000;
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: transparent;
+    border-radius: 50%;
+    transform: translateX(30.1rem) translateY(-27.85rem);
+    font-size: 1.5rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    border: none;
+    opacity: 100%;
+    cursor: pointer;
+  }
+  
+  #home_button  span {
+    display: none;
+    font-size: 1rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: #0020ad;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(95%, -50%);
+    white-space: nowrap;
+  }
+  
+  #home_button:hover span {
+    display: block;
+  }
+
+
+
+
+
+
+
+
